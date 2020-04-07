@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include<vector>
+#include <array>
 #include <time.h>
 #include <random>
 struct Neuron{
@@ -24,6 +25,8 @@ struct Neuron{
             inputDimensions{_inputDimensions}, inputs{_inputs}, maxBias{_maxBias}
             {
                 numInputs = inputs.size();
+//                std::array<double,inputDimensions> weightsArray;
+//                double weightsArray2 [inputDimensions];
                 initialize_all(maxBias);
             }
     
@@ -51,6 +54,7 @@ struct Neuron{
         std::vector<std::vector<double>> getWeights(){
             return weights;
         }
+        
         std::vector<double> getBiases(){
             return biases;
         }

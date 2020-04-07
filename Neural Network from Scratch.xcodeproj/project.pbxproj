@@ -27,6 +27,7 @@
 		01942C0D24394463004C4CDD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		01942C142439825E004C4CDD /* Neuron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Neuron.h; sourceTree = "<group>"; };
 		01942C1524398727004C4CDD /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		01A3203E243C2900001F9B54 /* forTesting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = forTesting.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				01942C0D24394463004C4CDD /* main.cpp */,
+				01A3203E243C2900001F9B54 /* forTesting.h */,
 				01942C1524398727004C4CDD /* Network.h */,
 				01942C142439825E004C4CDD /* Neuron.h */,
 			);

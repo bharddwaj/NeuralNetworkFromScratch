@@ -11,6 +11,8 @@
 #include <time.h>
 #include "Neuron.h"
 #include "Network.h"
+#include "forTesting.h"
+
 int main(int argc, const char * argv[]) {
     
     std::cout << "Hello, World!\n";
@@ -29,37 +31,27 @@ int main(int argc, const char * argv[]) {
     inputs.push_back(arr2);
     
 //    std::cout << (inputs)[0][2]<< std::endl;
-
-    Neuron * a = new Neuron(inputs[0].size(), inputs, 10);
-    std::vector<std::vector<double>> weights = a->getWeights();
+    Neuron *a = new Neuron(inputs[0].size(),inputs,10);
+    std::cout << "Single Neuron Output" <<std::endl;
     a->calculate_outputs();
-    std::vector<double> outputs = a->getOutputs();
-    for(auto &output: outputs){
-        std::cout << output << ",";
-    }
+    std::vector<double> outputsa = a->getOutputs();
+    std::cout << "Test out printing a neuron" << std::endl;
+    print_Output_Neuron(outputsa);
     Network *b = new Network(10,inputs,10);
-    b->getNeurons();
-    std::vector<std::vector<double>> outputs2 = b->getAllOutputs();
-    for(int i = 0; i < outputs2.size(); ++i){
-        std::cout << "[";
-        for(int j = 0; j < outputs2[0].size(); ++j){
-            if(j!=outputs2[0].size()-1 ){
-                std::cout << (outputs2)[i][j] << "," ;
-            }
-            else{
-                std::cout << (outputs2)[i][j];
-            }
-        }
-        std::cout << "]" <<std::endl;
-
-    }
+    Network *c = new Network(50,b->getAllOutputs(),10);
+    std::vector<std::vector<double>> outputsb = b->getAllOutputs();
+    std::cout << "Test out printing the network" << std::endl;
+    print_Output_Network(outputsb);
+    
 
 //    std::cout << "Now we are going to print out weights: " <<std::endl;
 //    std::cout << b[0].getWeights()[0][0] << std::endl;
 //    std::cout << b[0].getWeights()[0][1] << std::endl;
 //    std::cout << b[0].getWeights()[0][2] << std::endl;
 //    std::cout << b[0].getBiases()[0] <<std::endl;
-
+    delete a;
+    delete b;
+    delete c;
 
     
     return 0;

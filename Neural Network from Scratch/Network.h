@@ -39,16 +39,14 @@ struct Network{
         std::vector<std::vector<double>> getAllOutputs(){
             std::vector<std::vector<double>> allOutputs;
             if(!calculatedOutputs){
-                for(auto &neuron:neurons){
-                    neuron.calculate_outputs();
-                    allOutputs.push_back(neuron.getOutputs());
-                }
+                calculateAllOutputs();
+                calculatedOutputs = true;
             }
-            else{
-                for(auto &neuron:neurons){
-                    allOutputs.push_back(neuron.getOutputs());
-                }
+            
+            for(auto &neuron:neurons){
+                allOutputs.push_back(neuron.getOutputs());
             }
+            
             return allOutputs;
         }
     private:
